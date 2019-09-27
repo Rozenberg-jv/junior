@@ -1,8 +1,15 @@
+html, body, #main_wrapper {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: center;
+
+    /*     background-image: radial-gradient(circle, #3030aa 5%, #000064 15%, black 60%); */
+    background-image: radial-gradient(circle, #202088 5%, #000044 15%, black 40%);
 }
 
 #main_wrapper {
@@ -11,20 +18,43 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 2%;
 }
 
 .login_form {
-    margin-top: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+.login_form input {
+    border: #30aa30 2px solid;
+    border-radius: 10px;
+    background: #000066;
+    margin: 5px;
+    box-shadow: 0 0 25px 3px rgba(0, 200, 20, 1);
+    text-align: center;
+    padding: 5px;
+    outline: none;
+    color: #00aa6a;
+    font-weight: 600;
+}
+
+.login_form input[type="password"] {
+
+}
+
+.login_form input::placeholder {
+    color: #006666;
+    text-shadow: none;
+}
+
 h2 {
-    color: red;
+    color: #00aa6a;
     font-size: x-large;
     font-weight: 600;
+    text-shadow: 0 0 15px #00ff00, 0 0 3px black;
 }
 
 h3 {
