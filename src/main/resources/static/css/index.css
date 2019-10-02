@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: #c0c0ff55;
+    background: black;
 }
 
 #main_wrapper {
@@ -17,22 +17,28 @@ body {
     flex: 1;
     justify-content: center;
     flex-direction: column;
+    /*background: #c0c0ff;*/
 }
 
 .header {
     display: flex;
-    min-height: 20%;
+    min-height: 7%;
     border: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-    background: #8080ff;
-    box-shadow: 0 0 15px 15px #aaaaff;
+    background: #02478a;
+    box-shadow: 0 0 15px 15px #02478a;
+}
+
+.header:hover {
+    height: 20%;
 }
 
 .body {
     flex: 1;
     display: flex;
     flex-direction: row;
+    color: #d0d0d0;
 }
 
 .body_sidebar {
@@ -43,17 +49,17 @@ body {
     /*     border-radius: 15px; */
     /*     box-shadow: 0 0 10px 10px #aaaaff; */
     margin: 30px 10px 30px -10px;
-    padding: 15px 15px 15px 0px;
+    padding: 15px 15px 15px 0;
 
-    min-width: 15%;
+    min-width: 5%;
 }
 
 .body_sidebar_element {
     display: flex;
-    background: #404080;
-    border: 1px #2020b0 solid;
+    background: #02478a;
+    /*border: 0 #2020b0 solid;*/
     border-radius: 5px;
-    box-shadow: 0 0 15px 5px #aaaaff;
+    box-shadow: 0 0 15px 5px #02478a;
     margin: 5px 5px;
 
     min-height: 64px;
@@ -62,8 +68,36 @@ body {
     padding-left: 20px;
 }
 
-.body_main {
+.body_sidebar_element:hover {
+    transform: scaleX(5);
+}
+
+.body_sidebar_element:hover:after {
+
+}
+
+.body_sidebar_element::after {
+    content: "";
+    display: block;
+    position: relative;
+    border: 2px red solid;
+
+    height: 40px;
+    width: 40px;
+}
+
+.body_content {
     display: flex;
+    margin: 20px;
+    padding: 20px;
+    width: 80%;
+    /*     overflow: hidden; */
+    /*     height: auto; */
+}
+
+.body_content pre {
+    width: 100%;
+    white-space: pre-wrap
 }
 
 .footer {
@@ -71,6 +105,6 @@ body {
     min-height: 5%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    background: #8080ff;
-    box-shadow: 0 0 15px 15px #aaaaff;
+    background: #02478a;
+    box-shadow: 0 0 15px 15px #02478a;
 }

@@ -41,9 +41,6 @@ public class TokenAuthProvider implements AuthenticationProvider {
 		}
 
 		String encodedPassword = userDetails.getPassword();
-		System.out.println("user: " + username);
-		System.out.println("rawPassword: " + rawPassword);
-		System.out.println("  encoded: " + encodedPassword);
 
 		boolean same = passwordEncoder.matches(rawPassword, encodedPassword);
 		if (!same) {

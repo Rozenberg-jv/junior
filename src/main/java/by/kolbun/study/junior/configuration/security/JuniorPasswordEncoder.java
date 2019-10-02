@@ -17,7 +17,6 @@ public class JuniorPasswordEncoder implements PasswordEncoder {
 	public boolean matches(CharSequence rawPassword, String encodedPassword) {
 
 		String encrypted = encode(rawPassword);
-		System.out.println("encrypted: " + encrypted);
 		return encrypted.equals(encodedPassword);
 	}
 }
