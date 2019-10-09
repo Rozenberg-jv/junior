@@ -45,6 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 						.antMatchers(HttpMethod.GET, "*.css","*.js","*.png").permitAll()
 						.antMatchers(HttpMethod.POST, "/auth").permitAll()
 						.antMatchers(HttpMethod.GET, "/index").permitAll()
+						.antMatchers("/**").permitAll()
 						.antMatchers(HttpMethod.POST, "/index").authenticated()
 						.antMatchers(HttpMethod.GET, "/contentdata").authenticated()
 					.anyRequest().anonymous()

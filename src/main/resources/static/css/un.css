@@ -1,0 +1,14 @@
+.res_bg {
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    padding: 1px;
+}
+
+.res_amount {
+    height: 100%;
+    background-color: #00ff3e;
+    text-align: center;
+    line-height: 50px;
+
+}
