@@ -3,6 +3,7 @@ var stompClient = null;
 function connect() {
     var socket = new SockJS('/chat-messaging');
     stompClient = Stomp.over(socket);
+    stompClient.debug = null;
     stompClient.connect({}, function (frame) {
         // setConnected(true);
         console.log('connected: ' + frame);
@@ -54,4 +55,24 @@ function updateFillbar(amount, capacity) {
     let $resAmount = $('.res_amount');
     $resAmount.css('width', (amount / capacity * 100) + '%');
     $resAmount.text(amount + ' / ' + capacity);
+}
+
+let changeIncomeTypes = ['inc', 'dec'];
+
+function changeIncome(type) {
+    if (changeIncomeTypes.indexOf(type) === -1) {
+        console.log("wrong change income type value");
+        return;
+    }
+
+    $.ajax({
+        url: '/un/' + type,
+        type: 'get',
+        success: function (r) {
+            console.log(r);
+        },
+        error: function (r) {
+            console.log("error: " + r);
+        }
+    });
 }

@@ -1,9 +1,6 @@
 package by.kolbun.study.junior.controllers.un;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +8,9 @@ import org.springframework.stereotype.Component;
 public class UnKeeper extends Thread {
 
 	private int amount = 0;
+	private int lastAmount = 0;
 
-	private final int income = 10;
+	private int income = 10;
 
 	private final int capacity = 1000;
 
@@ -40,10 +38,25 @@ public class UnKeeper extends Thread {
 			if (amount > capacity)
 				amount = capacity;
 
-			messagingTemplate.convertAndSend("/chat/messages", new UnDto(amount, capacity));
+			if (amount < 0)
+				amount = 0;
 
-			System.out.printf("sending %d / %d\n", amount, capacity);
+			if (lastAmount != amount) {
+				messagingTemplate.convertAndSend("/chat/messages", new UnDto(amount, capacity));
+				lastAmount = amount;
+				System.out.printf("sending %d / %d\n", amount, capacity);
+			}
 		}
+	}
+
+	public void incIncome() {
+
+		income += 10;
+	}
+
+	public void decIncome() {
+
+		income -= 10;
 	}
 
 }

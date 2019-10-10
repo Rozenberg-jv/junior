@@ -10,5 +10,17 @@
     background-color: #00ff3e;
     text-align: center;
     line-height: 50px;
+    width: 0;
+}
 
+.control_panel {
+    display: flex;
+    flex-direction: row;
+    margin: 4px;
+}
+
+.button {
+    width: 75px;
+    height: 45px;
+    margin: 1px;
 }
