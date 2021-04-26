@@ -17,7 +17,7 @@
     <properties>
         <java.version>11</java.version>
         <jjwt.version>0.9.1</jjwt.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
     </properties>
 
     <dependencies>
